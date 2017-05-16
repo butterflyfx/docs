@@ -1,0 +1,19 @@
+baseURL = "http://docs.butterflyfx.io/"
+languageCode = "en-us"
+title = "ButterflyFX Documentation"
+theme = "thedocs"
+
+# Code higlighting settings
+pygmentsCodefences = false
+pygmentsCodeFencesGuesSsyntax = false
+pygmentsOptions = ""
+pygmentsStyle = "monokai"
+# The monokai stylesheet is included in the base template.
+pygmentsUseClasses = true
+
+defaultContentLanguage = "en"
+
+[[menu.main]]
+    name = "Getting Started"
+    parent="Introduction"
+    url = "#getting-started"
