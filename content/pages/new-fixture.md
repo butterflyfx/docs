@@ -15,22 +15,56 @@ If a fixture contains references to relative paths, then it'll need to specify `
 
 ## Selecting a page element
 
-> Include the snippet in your code below to get started
-
-```javascript
-// npm install butterflyfx-client
-let butterflyfx = require('butterflyfx-client');
-```
-
-```html
-
-<script type="text/javascript" src="https://www.butterflyfx.io/static/js/client.js"></script>
-
-```
 When you click the bookmarklet link, a UI will appear that allows you to select the element you'd like to use for the fixture.
-
 You can skip this screen and select the entire area by clicking the secondary (right) mouse button instead of the primary button.
 
 Before you can select a child element, you will need to create at least one base fixture to use with its query selector
 
 
+<div class="code-tabs">
+  <div class="code-preview">
+<img src="/demos/bookmarklet2.gif" />
+  </div>
+
+
+```html
+<script type="text/javascript" src="https://www.butterflyfx.io/static/js/client.js"></script>
+<script type="text/javascript">
+    var API_KEY = "INSERT-API-KEY-HERE";
+    var PROJECT_ID = 0;
+    var client = new ButterflyFX({project:PROJECT_ID, token:API_KEY});
+    var selector = ".my-container";
+    var html = document.querySelector(selector.outerHTML);
+    client.saveFixture({
+      name: "Hello world",
+      html: html,
+      selector: selector,
+      // Assumes a previously create fixture with slug "main-page"
+      parent: "main-page"
+    });
+</script>
+    
+```
+
+  
+  <pre class="line-numbers">
+<code class="language-javascript">
+// npm install butterflyfx-client
+const API_KEY = "INSERT-API-KEY-HERE";
+const PROJECT_ID = 0;
+const ButterflyFX = require('butterflyfx-client');
+let client = new ButterflyFX({project:PROJECT_ID, token:API_KEY});
+// An ordinary html string can be used here instead of document.querySelector
+let selector = ".my-container";
+let html = document.querySelector("html").outerHTML;
+client.saveFixture({
+  name: "Hello world",
+  html: html,
+  selector: selector,
+  // Assumes a previously create fixture with slug "main-page"
+  parent: "main-page"
+});
+
+
+</code></pre>
+</div>

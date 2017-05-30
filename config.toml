@@ -1,6 +1,6 @@
 baseURL = "http://docs.butterflyfx.io/"
 languageCode = "en-us"
-title = "ButterflyFX Documentation"
+title = "Documentation"
 theme = "thedocs"
 
 # Code higlighting settings
