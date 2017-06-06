@@ -24,12 +24,19 @@ If don't plan on testing against your localhost or any other internal URLs, then
 
 <pre class="line-numbers">
 
+<code class="language-bash">
+butterflyfx --api-key="INSERT-API-KEY-HERE" tunnel localhost:8000
+</code>
+</pre>
+
+<pre class="line-numbers">
+
 <code class="language-javascript">
 // npm install butterflyfx-client
 const API_KEY = "INSERT-API-KEY-HERE";
 const PROJECT_ID = 0;
 const ButterflyFX = require('butterflyfx-client');
-let client = new ButterflyFX({project:PROJECT_ID, token:API_KEY};
+let client = new ButterflyFX({project:PROJECT_ID, token:API_KEY});
 // Only works when run from a node based task runner.
 // e.g karma.conf.js, gulpfile.js, ember-cli-build.js, etc
 client.tunnel("localhost:8000");
@@ -37,23 +44,13 @@ client.tunnel("localhost:8000");
 
 </pre>
 
-<pre class="line-numbers">
-
-<code class="language-bash">
-butterflyfx --project=1 --api-key="INSERT-API-KEY-HERE" tunnel localhost:8000
-</code>
-
-</pre>
-
-
-
 
 </div>
 
 ### Create a fixture using the UI or the API
 
 The easiest way to get started is to drag and drop the <a href='
-javascript:(function()%7Bfunction callback()%7Bvar bfx %3D new ButterFlyFX()%3Bbfx.showFixtureDialog()%7Dvar s%3Ddocument.createElement(&#34;script&#34;)%3Bs.src%3D&#34;https%3A%2F%2Fwww.butterflyfx.io%2Fstatic%2Fjs%2Fclient.js&#34;%3Bif(s.addEventListener)%7Bs.addEventListener(&#34;load&#34;%2Ccallback%2Cfalse)%7Delse if(s.readyState)%7Bs.onreadystatechange%3Dcallback%7Ddocument.body.appendChild(s)%3B%7D)()
+javascript:(function()%7Bfunction callback()%7Bvar bfx %3D new ButterflyFX()%3Bbfx.showFixtureDialog()%7Dvar s%3Ddocument.createElement(&#34;script&#34;)%3Bs.src%3D&#34;https%3A%2F%2Fwww.butterflyfx.io%2Fstatic%2Fjs%2Fclient.js&#34;%3Bif(s.addEventListener)%7Bs.addEventListener(&#34;load&#34;%2Ccallback%2Cfalse)%7Delse if(s.readyState)%7Bs.onreadystatechange%3Dcallback%7Ddocument.body.appendChild(s)%3B%7D)()
 ' title="Take a Buttershot"> ButterflyFX Bookmarklet</a> link into your bookmarks toolbar.
 
 
@@ -70,7 +67,7 @@ javascript:(function()%7Bfunction callback()%7Bvar bfx %3D new ButterFlyFX()%3Bb
 <script type="text/javascript">
     var API_KEY = "INSERT-API-KEY-HERE";
     var PROJECT_ID = 0;
-    var client = new ButterflyFX({project:PROJECT_ID, token:API_KEY};
+    var client = new ButterflyFX({project:PROJECT_ID, token:API_KEY});
     client.saveFixture({
       name: "Hello world",
     });
@@ -85,8 +82,8 @@ javascript:(function()%7Bfunction callback()%7Bvar bfx %3D new ButterFlyFX()%3Bb
 const API_KEY = "INSERT-API-KEY-HERE";
 const PROJECT_ID = 0;
 const ButterflyFX = require('butterflyfx-client');
-let client = new ButterflyFX({project:PROJECT_ID, token:API_KEY};
-// An ordinary html string can be used here instead of document.querySelector
+let client = new ButterflyFX({project:PROJECT_ID, token:API_KEY});
+// An ordinary html string can be used here instead of document.querySelector 
 let html = document.querySelector("html").outerHTML;
 client.saveFixture({
   name: "Hello world",
@@ -102,5 +99,5 @@ Alternatively, you can copy and paste the following code into the URL section of
 
 
 <input type="text" style="width: 70%" onclick="this.focus(); this.select()" value='
-javascript:(function()%7Bfunction callback()%7Bvar bfx %3D new ButterFlyFX()%3Bbfx.showFixtureDialog()%7Dvar s%3Ddocument.createElement(&#34;script&#34;)%3Bs.src%3D&#34;https%3A%2F%2Fwww.butterflyfx.io%2Fstatic%2Fjs%2Fclient.js&#34;%3Bif(s.addEventListener)%7Bs.addEventListener(&#34;load&#34;%2Ccallback%2Cfalse)%7Delse if(s.readyState)%7Bs.onreadystatechange%3Dcallback%7Ddocument.body.appendChild(s)%3B%7D)()
+javascript:(function()%7Bfunction callback()%7Bvar bfx %3D new ButterflyFX()%3Bbfx.showFixtureDialog()%7Dvar s%3Ddocument.createElement(&#34;script&#34;)%3Bs.src%3D&#34;https%3A%2F%2Fwww.butterflyfx.io%2Fstatic%2Fjs%2Fclient.js&#34;%3Bif(s.addEventListener)%7Bs.addEventListener(&#34;load&#34;%2Ccallback%2Cfalse)%7Delse if(s.readyState)%7Bs.onreadystatechange%3Dcallback%7Ddocument.body.appendChild(s)%3B%7D)()
 ' />

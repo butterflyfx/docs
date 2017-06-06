@@ -10,13 +10,12 @@ weight= 2
 
 A fixture is made up of three basic components: A unique identifier (slug), the html associated with a particular element or page, and a project which this fixture belongs to. From there, CSS is derived from stylesheets defined or loaded from the html.
 
-If a fixture contains references to relative paths, then it'll need to specify `origin` and `path` properties in its revision. This can also be derived by setting the `base_url` property of a fixture's project.
-
-
 ## Selecting a page element
 
-When you click the bookmarklet link, a UI will appear that allows you to select the element you'd like to use for the fixture.
-You can skip this screen and select the entire area by clicking the secondary (right) mouse button instead of the primary button.
+When you click the bookmarklet link, a UI will appear that allows you to select the page you'd like to use for the fixture.
+
+You can also create a fixture based on a specific element on the page by holding down the `CTRL` key and clicking on its area. 
+The next screen will allow you to choose a unique query selector if it was not detected automatically.
 
 Before you can select a child element, you will need to create at least one base fixture to use with its query selector
 

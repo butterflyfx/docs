@@ -48,8 +48,18 @@ You can generate your own builds from source by downloading from our code reposi
   </div>
 </div>
 
+On Mac and Linux, you'll also need to copy the downloaded file to your path with the right permissions.
+
+    # Replace ~/Downloads with wherever you downloaded the file
+    cd ~/Downloads
+    cp butterflyfx /usr/local/bin
+    chmod +x /usr/local/bin/butterflyfx
+
 ## Using the command line client
 
 You can use the command line client to create establish a private tunnel between ButterflyFX and your localhost or other internal resources. 
 Once you've downloaded the client, you'll need to [generating an API key](https://www.butterflyfx.io/dash/settings/api) from the website before making any requests.
 
+```bash
+butterflyfx --api-key="INSERT-API-KEY-HERE" tunnel localhost:80
+```
