@@ -17,7 +17,7 @@ When you click the bookmarklet link, a UI will appear that allows you to select 
 You can also create a fixture based on a specific element on the page by holding down the `CTRL` key and clicking on its area. 
 The next screen will allow you to choose a unique query selector if it was not detected automatically.
 
-Before you can select a child element, you will need to create at least one base fixture to use with its query selector
+Fixtures based on a specific element require an existing fixture that includes the element as its parent.
 
 
 <div class="code-tabs">

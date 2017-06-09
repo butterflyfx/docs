@@ -19,29 +19,8 @@ New builds can be triggered by selecting a project with the New Build button on 
 
 <div class="code-tabs">
   <div class="code-preview">
-<img src="/demos/bookmarklet2.gif" />
+<img src="/demos/trigger-build-doc.gif" />
   </div>
-
-
-```html
-<script type="text/javascript" src="https://www.butterflyfx.io/static/js/client.js"></script>
-<script type="text/javascript">
-    var API_KEY = "INSERT-API-KEY-HERE";
-    var PROJECT_ID = 0;
-    var client = new ButterflyFX({project:PROJECT_ID, token:API_KEY});
-    var selector = ".my-container";
-    var html = document.querySelector(selector.outerHTML);
-    client.saveFixture({
-      name: "Hello world",
-      html: html,
-      selector: selector,
-      // Assumes a previously create fixture with slug "main-page"
-      parent: "main-page"
-    });
-</script>
-    
-```
-
   
   <pre class="line-numbers">
 <code class="language-javascript">
@@ -50,16 +29,7 @@ const API_KEY = "INSERT-API-KEY-HERE";
 const PROJECT_ID = 0;
 const ButterflyFX = require('butterflyfx-client');
 let client = new ButterflyFX({project:PROJECT_ID, token:API_KEY});
-// An ordinary html string can be used here instead of document.querySelector
-let selector = ".my-container";
-let html = document.querySelector("html").outerHTML;
-client.saveFixture({
-  name: "Hello world",
-  html: html,
-  selector: selector,
-  // Assumes a previously create fixture with slug "main-page"
-  parent: "main-page"
-});
+client.build();
 
 
 </code></pre>
