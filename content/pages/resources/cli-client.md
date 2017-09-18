@@ -61,5 +61,12 @@ You can use the command line client to create establish a private tunnel between
 Once you've downloaded the client, you'll need to [generating an API key](https://www.butterflyfx.io/dash/settings/api) from the website before making any requests.
 
 ```bash
+butterflyfx --api-key="INSERT-API-KEY-HERE" tunnel
+```
+
+By default, the command line client allows ButterflyFX to access any websites that may be available through your local machine such as local intranet websites.
+However, you can also restrict access to a specific website by specifying a hostname as an argument to the tunnel command. For example,
+
+```bash
 butterflyfx --api-key="INSERT-API-KEY-HERE" tunnel localhost:80
 ```

@@ -25,7 +25,7 @@ If don't plan on testing against your localhost or any other internal URLs, then
 <pre class="line-numbers">
 
 <code class="language-bash">
-butterflyfx --api-key="INSERT-API-KEY-HERE" tunnel localhost:8000
+butterflyfx --api-key="INSERT-API-KEY-HERE" tunnel
 </code>
 </pre>
 
